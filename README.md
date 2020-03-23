@@ -8,6 +8,7 @@ This project aims to use personalization to improve job search and recommendatio
 <br>
 <br>
 <br>
+
 ## Web Application Setup (Eclipse)
 * Setup development environment for the jupiter project on my local laptop.
 * Create and start a tomcat server on my local.
