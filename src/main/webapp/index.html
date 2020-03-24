@@ -25,7 +25,7 @@
     <header>
       <p>
         <span>Item</span>
-        <br>Recommendation
+        <br />Recommendation
       </p>
     </header>
 
@@ -54,8 +54,67 @@
         <p id="register-result"></p>
       </div>
 
-      
+      <aside id="item-nav">
+        <div class="nav-icon">
+          <i class="fa fa-sitemap fa-2x"></i>
+        </div>
+        <nav class=“main-nav”>
+          <a href="#" id=“nearby-btn” class="main-nav-btn active">
+            <i class="fa fa-map-marker"></i> Nearby
+          </a>
+          <a href="#" id="fav-btn" class="main-nav-btn">
+            <i class="fa fa-heart"></i> My Favorites
+          </a>
+          <a href="#" id="recommend-btn" class="main-nav-btn">
+            <i class="fa fa-thumbs-up"></i> Recommendation
+          </a>
+        </nav>
+      </aside>
+
+      <ul id="item-list">
+        <li class="item">
+          <img src="https://img.icons8.com/bubbles/100/000000/square.png" alt="item image">
+          <div>
+            <a class="item-name" href="#">Item</a>
+            <p class="item-category">Item Category</p>
+            <div class="stars">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </div>
+          </div>
+          <p class="item-address">209 Stewart Ave<br />Mountain View<br />CA</p>
+          <div class="fav-lin">
+            <i class="fa fa-heart"></i>
+          </div>
+        </li>
+      </ul>
     </section>
   </div>
+
+  <footer>
+    <p class="title">What We Do</p>
+    <p>"Find you the awesome opportunities!"</p>
+    <ul>
+      <li>
+        <p><i class="fa fa-map-o fa-2x"></i></p>
+        <p>JobReco office, CA</p>
+      </li>
+      <li>
+        <p><i class="fa fa-envelope-o fa-2x"></i></p>
+        <p>info@jobreco.com</p>
+      </li>
+      <li>
+        <p><i class="fa fa-phone fa-2x"></i></p>
+        <p>+1 800 800 800</p>
+      </li>
+    </ul>
+  </footer>
+
+  <script src="https://rawgit.com/emn178/js-md5/master/build/md5.min.js"></script>
+  <script src="scripts/apis.js"></script>
+  <script src="scripts/utils.js"></script>
+  <script src="scripts/main.js"></script>
+  
 </body>
 </html>
