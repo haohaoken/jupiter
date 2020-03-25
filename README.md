@@ -24,4 +24,4 @@ This project aims to use personalization to improve job search and recommendatio
 
 ### GitHub Job API
 * Connected GitHub Job API with SearchItem servlet.
-* 
+* Purified jobs data returned from GitHub Job API.
