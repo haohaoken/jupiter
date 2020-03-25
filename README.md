@@ -17,3 +17,8 @@ This project aims to use personalization to improve job search and recommendatio
 ### Servlets with RESTful APIs
 * Created SearchItem, RecommendItem servlets.
 * Added RpcHelper utility class to handle all rpc parsing codes.
+
+### Frontend Implementation
+* Created index.html for the basic layouts.
+* Created main.css for the web page styles.
+
