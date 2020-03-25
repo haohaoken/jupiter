@@ -29,3 +29,9 @@ This project aims to use personalization to improve job search and recommendatio
 ### Keyword Extraction by TF-IDF
 * Utilized Monkey Learn API to extract keywords from job descriptions.
 
+### MySQL on Amazon RDS
+* Setup MySQL on Amazon RDS.
+* 
+
+### Tables for Jupiter Project
+ ![ER Diagram](ERDiagram.png)
