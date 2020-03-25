@@ -22,3 +22,6 @@ This project aims to use personalization to improve job search and recommendatio
 * Created index.html for the basic layouts.
 * Created main.css for the web page styles.
 
+### GitHub Job API
+* Connected GitHub Job API with SearchItem servlet.
+* 

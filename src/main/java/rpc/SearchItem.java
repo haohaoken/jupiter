@@ -7,8 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
+import external.GitHubClient;
 
 /** Servlet implementation class SearchItem */
 public class SearchItem extends HttpServlet {
@@ -24,10 +23,10 @@ public class SearchItem extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
-        JSONArray array = new JSONArray();
-        array.put(new JSONObject().put("username", "abcd"));
-        array.put(new JSONObject().put("username", "1234"));
-        RpcHelper.writeJsonArray(response, array);
+        double lat = Double.parseDouble(request.getParameter("lat"));
+        double lon = Double.parseDouble(request.getParameter("lon"));
+        GitHubClient client = new GitHubClient();
+        RpcHelper.writeJsonArray(response, client.search(lat, lon, null));
     }
 
     /** @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response) */
