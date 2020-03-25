@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 import org.apache.http.HttpEntity;
@@ -58,6 +59,17 @@ public class GitHubClient {
 
     private List<Item> getItemList(JSONArray array) {
         List<Item> itemList = new ArrayList<>();
+        List<String> descriptionList = new ArrayList<>();
+        for (int i = 0; i < array.length(); i++) {
+            String description = getStringFieldOrEmpty(array.getJSONObject(i), "description");
+            if (description.contentEquals("") || description.contentEquals("\n")) {
+                descriptionList.add(getStringFieldOrEmpty(array.getJSONObject(i), "title"));
+            } else {
+                descriptionList.add(description);
+            }
+        }
+        List<List<String>> keywords = MonkeyLearnClient
+            .extractKeywords(descriptionList.toArray(new String[descriptionList.size()]));
         for (int i = 0; i < array.length(); i++) {
             JSONObject obj = array.getJSONObject(i);
             ItemBuilder builder = new ItemBuilder();
@@ -65,7 +77,8 @@ public class GitHubClient {
                 .setName(getStringFieldOrEmpty(obj, "title"))
                 .setAddress(getStringFieldOrEmpty(obj, "location"))
                 .setUrl(getStringFieldOrEmpty(obj, "url"))
-                .setImageUrl(getStringFieldOrEmpty(obj, "company_logo"));
+                .setImageUrl(getStringFieldOrEmpty(obj, "company_logo"))
+                .setKeywords(new HashSet<String>(keywords.get(i)));
             Item item = builder.build();
             itemList.add(item);
         }

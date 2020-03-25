@@ -3,7 +3,7 @@
 This project aims to use personalization to improve job search and recommendation.
 * Created Java servlets with RESTful APIs to handle HTTP requests and responses.
 * Built MySQL database on Amazon RDS to store position data from Github API.
-* Designed algorithms (e.g. content-based recommendation) to improve job recommendation based on search history and favorite records.
+* Designed algorithms (e.g. content-based recommendation) to improve job recommendation based on favorite records.
 * Deployed server to Amazon EC2 to handle 150 queries per second tested by Apache JMeter.
 <br>
 <br>
@@ -25,3 +25,7 @@ This project aims to use personalization to improve job search and recommendatio
 ### GitHub Job API
 * Connected GitHub Job API with SearchItem servlet.
 * Purified jobs data returned from GitHub Job API.
+
+### Keyword Extraction by TF-IDF
+* Utilized Monkey Learn API to extract keywords from job descriptions.
+
