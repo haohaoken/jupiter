@@ -4,6 +4,7 @@ This project aims to use personalization to improve job search and recommendatio
 * Created Java servlets with RESTful APIs to handle HTTP requests and responses.
 * Built MySQL database on Amazon RDS to store position data from Github API.
 * Designed algorithms (e.g. content-based recommendation) to improve job recommendation based on favorite records.
+* Performed front-end web UI design and implementation using HTML/CSS/JavaScript.
 * Deployed server to Amazon EC2 to handle 150 queries per second tested by Apache JMeter.
 <br>
 <br>
@@ -17,10 +18,12 @@ This project aims to use personalization to improve job search and recommendatio
 ### Servlets with RESTful APIs
 * Created SearchItem, RecommendItem servlets.
 * Added RpcHelper utility class to handle all rpc parsing codes.
+* Implemented ItemHistory servlet to sere history realted request.
 
 ### Frontend Implementation
 * Created index.html for the basic layouts.
 * Created main.css for the web page styles.
+* Implemented main.js with Ajax technique.
 
 ### GitHub Job API
 * Connected GitHub Job API with SearchItem servlet.
@@ -31,7 +34,7 @@ This project aims to use personalization to improve job search and recommendatio
 
 ### MySQL on Amazon RDS
 * Setup MySQL on Amazon RDS.
-* 
+* Saved/read data to/from MySQL by JDBC
 
 ### Tables for Jupiter Project
  ![ER Diagram](ERDiagram.png)
