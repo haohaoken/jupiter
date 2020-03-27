@@ -1,7 +1,6 @@
 package rpc;
 
 import java.io.IOException;
-import java.util.List;
 import java.util.Set;
 
 import javax.servlet.ServletException;
@@ -14,14 +13,13 @@ import org.json.JSONObject;
 
 import db.MySQLConnection;
 import entity.Item;
-import external.GitHubClient;
 
-/** Servlet implementation class SearchItem */
-public class SearchItem extends HttpServlet {
+/** Servlet implementation class ItemHistory */
+public class ItemHistory extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     /** @see HttpServlet#HttpServlet() */
-    public SearchItem() {
+    public ItemHistory() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,17 +29,15 @@ public class SearchItem extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
         String userId = request.getParameter("user_id");
-        double lat = Double.parseDouble(request.getParameter("lat"));
-        double lon = Double.parseDouble(request.getParameter("lon"));
-        GitHubClient client = new GitHubClient();
-        List<Item> items = client.search(lat, lon, null);
+
         MySQLConnection connection = new MySQLConnection();
-        Set<String> favoritedItemIds = connection.getFavoriteItemIds(userId);
+        Set<Item> items = connection.getFavoriteItems(userId);
         connection.close();
+
         JSONArray array = new JSONArray();
         for (Item item : items) {
             JSONObject obj = item.toJSONObject();
-            obj.put("favorite", favoritedItemIds.contains(item.getItemId()));
+            obj.put("favorite", true);
             array.put(obj);
         }
         RpcHelper.writeJsonArray(response, array);
@@ -51,8 +47,26 @@ public class SearchItem extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
-        // TODO Auto-generated method stub
-        doGet(request, response);
+        MySQLConnection connection = new MySQLConnection();
+        JSONObject input = RpcHelper.readJSONObject(request);
+        String userId = input.getString("user_id");
+        Item item = RpcHelper.parseFavoriteItem(input.getJSONObject("favorite"));
+        connection.setFavoriteItems(userId, item);
+        connection.close();
+        RpcHelper.writeJsonObject(response, new JSONObject().put("result", "SUCCESS"));
+    }
+
+    @Override
+    protected void doDelete(HttpServletRequest request, HttpServletResponse response)
+        throws ServletException, IOException {
+        MySQLConnection connection = new MySQLConnection();
+        JSONObject input = RpcHelper.readJSONObject(request);
+        String userId = input.getString("user_id");
+        Item item = RpcHelper.parseFavoriteItem(input.getJSONObject("favorite"));
+
+        connection.unsetFavoriteItems(userId, item.getItemId());
+        connection.close();
+        RpcHelper.writeJsonObject(response, new JSONObject().put("result", "SUCCESS"));
     }
 
 }
