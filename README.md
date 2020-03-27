@@ -1,6 +1,6 @@
 # Project Jupiter
 ## Overview: AWS Based Web Service Development - Job Recommendation
-This project aims to use personalization to improve job search and recommendation.
+This project aims to use search history and personalization to improve job search and recommendation.
 * Created Java servlets with RESTful APIs to handle HTTP requests and responses.
 * Built MySQL database on Amazon RDS to store position data from Github API.
 * Designed algorithms (e.g. content-based recommendation) to improve job recommendation based on favorite records.
@@ -38,3 +38,8 @@ This project aims to use personalization to improve job search and recommendatio
 
 ### Tables for Jupiter Project
  ![ER Diagram](ERDiagram.png)
+
+### Authentication
+* Implemented session based authentication process.
+* Created login, logout and register servlets to serve user requests.
+
