@@ -43,3 +43,5 @@ This project aims to use search history and personalization to improve job searc
 * Implemented session based authentication process.
 * Created login, logout and register servlets to serve user requests.
 
+### Recommendation Engineering Design
+![RecoItem Design](RecoItem.png)
