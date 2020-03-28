@@ -25,6 +25,8 @@ This project aims to use search history and personalization to improve job searc
 * Created main.css for the web page styles.
 * Implemented main.js with Ajax technique.
 
+![main.js](Ajax.png)
+
 ### GitHub Job API
 * Connected GitHub Job API with SearchItem servlet.
 * Purified jobs data returned from GitHub Job API.
