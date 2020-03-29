@@ -96,9 +96,6 @@ derby.log
 # Ignore the hide directory
 hide/
 
-# Ignore .png
-*.png 
-
 # Ignore .Rhistory
 .Rhistory
  
