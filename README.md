@@ -5,7 +5,7 @@ This project aims to use search history and personalization to improve job searc
 * Built MySQL database on Amazon RDS to store position data from Github API.
 * Designed algorithms (e.g. content-based recommendation) to improve job recommendation based on favorite records.
 * Performed front-end web UI design and implementation using HTML/CSS/JavaScript.
-* Deployed server to Amazon EC2 to handle 150 queries per second tested by Apache JMeter.
+* Deployed server to Amazon EC2 with Docker.
 
 ### Project Structure
 ![Project Structure](ProjectStructure.png)
