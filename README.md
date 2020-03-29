@@ -6,8 +6,9 @@ This project aims to use search history and personalization to improve job searc
 * Designed algorithms (e.g. content-based recommendation) to improve job recommendation based on favorite records.
 * Performed front-end web UI design and implementation using HTML/CSS/JavaScript.
 * Deployed server to Amazon EC2 to handle 150 queries per second tested by Apache JMeter.
-
-![Project Structure](ProjectStructure.png)
+<br>
+<br>
+<br>
 
 ### Web Application Setup
 * Setup Eclipse development environment for a maven project.
