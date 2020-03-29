@@ -47,3 +47,7 @@ This project aims to use search history and personalization to improve job searc
 
 ### Recommendation Engineering Design
 ![RecoItem Design](RecoItem.png)
+
+### EC2 Deployment
+* Setup a EC2 VM instance.
+* Deployed the Jupiter project to the EC2 VM with Docker.
