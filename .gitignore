@@ -97,4 +97,4 @@ derby.log
 hide/
 
 # Ignore .png
-.png  
+*.png  
