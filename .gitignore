@@ -94,4 +94,7 @@ local.properties
 derby.log
 
 # Ignore the hide directory
-hide/ 
+hide/
+
+# Ignore .png
+*.png  
