@@ -92,3 +92,6 @@ local.properties
 
 # Testing environment specific
 derby.log
+
+# Ignore the hide directory
+hide/ 
